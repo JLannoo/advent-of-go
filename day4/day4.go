@@ -79,6 +79,8 @@ func Run() {
 	fmt.Println("===== Day 4 =====")
 	Part1()
 	Part2()
+
+	fmt.Println()
 }
 
 func toRange(r string) Range {
