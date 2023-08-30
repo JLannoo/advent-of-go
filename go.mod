@@ -2,4 +2,4 @@ module github.com/jlannoo/advent-of-go
 
 go 1.20
 
-require golang.org/x/exp v0.0.0-20230713183714-613f0c0eb8a1 // indirect
+require github.com/deckarep/golang-set v1.8.0
