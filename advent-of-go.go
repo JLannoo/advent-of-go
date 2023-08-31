@@ -7,6 +7,7 @@ import (
 	"github.com/jlannoo/advent-of-go/day4"
 	"github.com/jlannoo/advent-of-go/day5"
 	"github.com/jlannoo/advent-of-go/day6"
+	"github.com/jlannoo/advent-of-go/day7"
 )
 
 func main() {
@@ -16,4 +17,5 @@ func main() {
 	day4.Run()
 	day5.Run()
 	day6.Run()
+	day7.Run()
 }
