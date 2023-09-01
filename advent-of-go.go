@@ -13,6 +13,7 @@ import (
 	"github.com/jlannoo/advent-of-go/day5"
 	"github.com/jlannoo/advent-of-go/day6"
 	"github.com/jlannoo/advent-of-go/day7"
+	"github.com/jlannoo/advent-of-go/day8"
 )
 
 func main() {
@@ -24,6 +25,7 @@ func main() {
 		day5.Run,
 		day6.Run,
 		day7.Run,
+		day8.Run,
 	}
 
 	fmt.Println("===== Advent of Go =====")
@@ -39,7 +41,7 @@ func main() {
 
 	isAll := args == "all" || args == "All" || args == "ALL"
 	if isAll {
-		print("Running all days")
+		fmt.Println("Running all days")
 		runAll(days)
 		os.Exit(0)
 	}
@@ -59,6 +61,7 @@ func main() {
 	isDay := err == nil && day > 0 && day < 26
 	if isDay {
 		fmt.Println("Running day", day)
+		days[day-1]()
 		os.Exit(0)
 	}
 
