@@ -14,6 +14,7 @@ import (
 	"github.com/jlannoo/advent-of-go/day6"
 	"github.com/jlannoo/advent-of-go/day7"
 	"github.com/jlannoo/advent-of-go/day8"
+	"github.com/jlannoo/advent-of-go/day9"
 )
 
 func main() {
@@ -26,6 +27,7 @@ func main() {
 		day6.Run,
 		day7.Run,
 		day8.Run,
+		day9.Run,
 	}
 
 	fmt.Println("===== Advent of Go =====")

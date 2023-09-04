@@ -238,7 +238,7 @@ func ReadFile() string {
 }
 
 func Run() {
-	fmt.Println("==== Day 8 ====")
+	fmt.Println("===== Day 8 =====")
 	Part1()
 	Part2()
 
