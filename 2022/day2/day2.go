@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
+	"github.com/jlannoo/advent-of-go/year"
 )
 
 type POINTS struct {
@@ -121,7 +123,7 @@ func Part2() {
 }
 
 func readFile() string {
-	input, err := os.ReadFile("day2/input.txt")
+	input, err := os.ReadFile("2022/day2/input.txt")
 	if err != nil {
 		panic(err)
 	}
@@ -144,4 +146,9 @@ func Run() {
 	Part2()
 
 	fmt.Println()
+}
+
+var Day = year.Day{
+	Number: 2,
+	Run:    Run,
 }

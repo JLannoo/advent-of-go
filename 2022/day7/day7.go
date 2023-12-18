@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
+	"github.com/jlannoo/advent-of-go/year"
 )
 
 const (
@@ -18,9 +20,9 @@ type Command struct {
 }
 
 /*
-	Part 1
+Part 1
 
-	Find the sum of the sizes of all directories that are smaller than 100000
+Find the sum of the sizes of all directories that are smaller than 100000
 */
 func Part1() {
 	input := readFile()
@@ -56,9 +58,9 @@ func Part1() {
 }
 
 /*
-	Part 2
+Part 2
 
-	Choose the smallest directory to delete that would leave enough space
+Choose the smallest directory to delete that would leave enough space
 */
 func Part2() {
 	input := readFile()
@@ -140,7 +142,7 @@ func getInstructions(input []string) []Command {
 }
 
 func readFile() string {
-	input, err := os.ReadFile("day7/input.txt")
+	input, err := os.ReadFile("2022/day7/input.txt")
 
 	if err != nil {
 		panic(err)
@@ -155,4 +157,9 @@ func Run() {
 	Part2()
 
 	fmt.Println()
+}
+
+var Day = year.Day{
+	Number: 7,
+	Run:    Run,
 }

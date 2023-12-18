@@ -5,6 +5,8 @@ import (
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/jlannoo/advent-of-go/year"
 )
 
 type Range struct {
@@ -36,7 +38,7 @@ func Part1() {
 		firstRange := toRange(ranges[0])
 		secondRange := toRange(ranges[1])
 
-		if firstRange.Contains(secondRange) || 
+		if firstRange.Contains(secondRange) ||
 			firstRange.IsContained(secondRange) {
 			containedPairs = append(containedPairs, pair)
 		}
@@ -66,7 +68,7 @@ func Part2() {
 }
 
 func readFile() string {
-	input, err := os.ReadFile("day4/input.txt")
+	input, err := os.ReadFile("2022/day4/input.txt")
 
 	if err != nil {
 		panic(err)
@@ -96,4 +98,9 @@ func toRange(r string) Range {
 	}
 
 	return Range{Start: ints[0], End: ints[1]}
+}
+
+var Day = year.Day{
+	Number: 4,
+	Run:    Run,
 }

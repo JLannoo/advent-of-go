@@ -6,6 +6,8 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+
+	"github.com/jlannoo/advent-of-go/year"
 )
 
 func Part1() {
@@ -36,7 +38,7 @@ func Part2() {
 }
 
 func readFile() string {
-	input, error := os.ReadFile("day1/input.txt")
+	input, error := os.ReadFile("2022/day1/input.txt")
 	if error != nil {
 		panic(error)
 	}
@@ -76,4 +78,9 @@ func Run() {
 	Part2()
 
 	fmt.Println()
+}
+
+var Day = year.Day{
+	Number: 1,
+	Run:    Run,
 }

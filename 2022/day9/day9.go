@@ -8,6 +8,7 @@ import (
 	"strings"
 
 	mapset "github.com/deckarep/golang-set"
+	"github.com/jlannoo/advent-of-go/year"
 )
 
 const (
@@ -212,7 +213,7 @@ func Part2() {
 }
 
 func ReadFile() string {
-	input, err := os.ReadFile("day9/input.txt")
+	input, err := os.ReadFile("2022/day9/input.txt")
 
 	if err != nil {
 		panic(err)
@@ -253,4 +254,9 @@ func clamp(n int, min int, max int) int {
 	}
 
 	return n
+}
+
+var Day = year.Day{
+	Number: 9,
+	Run:    Run,
 }

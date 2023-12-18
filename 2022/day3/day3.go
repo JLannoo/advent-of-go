@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
+	"github.com/jlannoo/advent-of-go/year"
 )
 
 func Part1() {
@@ -53,7 +55,7 @@ func Part2() {
 }
 
 func readFile() string {
-	input, err := os.ReadFile("day3/input.txt")
+	input, err := os.ReadFile("2022/day3/input.txt")
 
 	if err != nil {
 		panic(err)
@@ -113,4 +115,9 @@ func Run() {
 	Part2()
 
 	fmt.Println()
+}
+
+var Day = year.Day{
+	Number: 3,
+	Run:    Run,
 }

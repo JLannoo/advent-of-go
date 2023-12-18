@@ -6,6 +6,8 @@ import (
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/jlannoo/advent-of-go/year"
 )
 
 type Dock struct {
@@ -171,7 +173,7 @@ func reverse(lines []string) []string {
 }
 
 func readFile() string {
-	input, err := os.ReadFile("day5/input.txt")
+	input, err := os.ReadFile("2022/day5/input.txt")
 
 	if err != nil {
 		panic(err)
@@ -186,4 +188,9 @@ func Run() {
 	Part2()
 
 	fmt.Println()
+}
+
+var Day = year.Day{
+	Number: 5,
+	Run:    Run,
 }

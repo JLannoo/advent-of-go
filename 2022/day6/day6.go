@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
 	mapset "github.com/deckarep/golang-set"
+	"github.com/jlannoo/advent-of-go/year"
 )
 
 const SIGNAL_LENGTH_PART_1 = 4
@@ -39,14 +41,14 @@ func findIndex(input string, signalLength int) int {
 		if set.Cardinality() == signalLength {
 			index = i + signalLength
 			break
-		}		
+		}
 	}
 
 	return index
 }
 
 func readFile() string {
-	input, err := os.ReadFile("day6/input.txt")
+	input, err := os.ReadFile("2022/day6/input.txt")
 
 	if err != nil {
 		panic(err)
@@ -61,4 +63,9 @@ func Run() {
 	Part2()
 
 	fmt.Println()
+}
+
+var Day = year.Day{
+	Number: 6,
+	Run:    Run,
 }

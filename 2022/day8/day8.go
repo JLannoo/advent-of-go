@@ -5,6 +5,8 @@ import (
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/jlannoo/advent-of-go/year"
 )
 
 /*
@@ -175,7 +177,7 @@ func (grid *Grid) Print(highlightX int, highlightY int) {
 		}
 		fmt.Println()
 	}
-	
+
 	fmt.Println()
 }
 
@@ -229,7 +231,7 @@ func Part2() {
 }
 
 func ReadFile() string {
-	input, err := os.ReadFile("day8/input.txt")
+	input, err := os.ReadFile("2022/day8/input.txt")
 	if err != nil {
 		panic(err)
 	}
@@ -243,4 +245,9 @@ func Run() {
 	Part2()
 
 	fmt.Println()
+}
+
+var Day = year.Day{
+	Number: 8,
+	Run:    Run,
 }
