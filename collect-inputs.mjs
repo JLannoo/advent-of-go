@@ -17,27 +17,38 @@ for(const [year, days] of Object.entries(yearDayMap)) {
         if(!shortInputExists(year, day)) {
             console.log(`Downloading short input for ${year} ${day}`)
             const shortInput = await downloadShortInputForDay(year, day);
-            fs.writeFileSync(`./${year}/${day}/short-input.txt`, shortInput);
+            fs.writeFileSync(getShortInputPath(year, day), shortInput);
         }
 
         if(!inputExists(year, day)) {
             console.log(`Downloading input for ${year} ${day}`)
             const input = await downloadInputForDay(year, day);
-            fs.writeFileSync(`./${year}/${day}/input.txt`, input);
+            fs.writeFileSync(getInputPath(year, day), input);
         }
     }
 }
 
 function shortInputExists(year, day) {
-    return fs.existsSync(`./${year}/${day}/short-input.txt`);
+    return fs.existsSync(getShortInputPath(year, day));
 }
 
 function inputExists(year, day) {
-    return fs.existsSync(`./${year}/${day}/input.txt`);
+    return fs.existsSync(getInputPath(year, day));
+}
+
+function getShortInputPath(year, day) {
+    const FILE_NAME = "short-input.txt";
+    return `./${year}/${day}/${FILE_NAME}`;
+}
+
+function getInputPath(year, day) {
+    const FILE_NAME = "input.txt";
+    return `./${year}/${day}/${FILE_NAME}`;
 }
 
 async function downloadInputForDay(year, day) {
-    const response = await fetch(`https://adventofcode.com/${year}/day/${day.slice(3)}/input`, {
+    const URL = `https://adventofcode.com/${year}/day/${day.slice(3)}/input`;
+    const response = await fetch(URL, {
         headers: {
             cookie: `session=${process.env.AOC_SESSION_COOKIE}`
         }
@@ -49,7 +60,6 @@ async function downloadInputForDay(year, day) {
 
 async function downloadShortInputForDay(year,day) {
     const URL = `https://adventofcode.com/${year}/day/${day.slice(3)}`;
-    console.log(URL);
     const response = await fetch(URL, {
         headers: {
             cookie: `session=${process.env.AOC_SESSION_COOKIE}`
