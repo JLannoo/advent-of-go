@@ -1,18 +1,20 @@
 package main
 
 import (
-	"2022"
 	"flag"
 	"fmt"
 	"strconv"
 	"strings"
-
+	
+	"2022"
+	"2023"
 	"github.com/jlannoo/advent-of-go/year"
 )
 
 func main() {
 	years := []year.Year{
 		year_2022.Year,
+		year_2023.Year,
 	}
 
 	yearPtr := flag.String("year", "", "Year to run (all, 2022)")
